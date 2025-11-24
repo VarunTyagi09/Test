@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Portal - CuraSync</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="dashboard-body">
+    <!-- Patient Dashboard Navigation -->
+    <!-- Update the navbar in patient-dashboard.html -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-success">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="patient-dashboard.html">
+                <i class="fas fa-heartbeat me-2"></i>
+                <span class="fw-bold">CuraSync Patient</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#patientNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="patientNavbar">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="patient-dashboard.html"><i class="fas fa-tachometer-alt me-1"></i> Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="patient-appointments.html"><i class="fas fa-calendar-alt me-1"></i> My Appointments</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="patient-records.html"><i class="fas fa-file-medical me-1"></i> Health Records</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="patient-prescriptions.html"><i class="fas fa-prescription me-1"></i> Prescriptions</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="patient-billing.html"><i class="fas fa-file-invoice me-1"></i> Billing</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="patientDropdown" role="button" data-bs-toggle="dropdown">
+                            <i class="fas fa-user me-1"></i> John Smith
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="patient-profile.html"><i class="fas fa-user-edit me-2"></i> Edit Profile</a></li>
+                            <li><a class="dropdown-item" href="patient-settings.html"><i class="fas fa-cog me-2"></i> Settings</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#" id="patientLogout"><i class="fas fa-sign-out-alt me-2"></i> Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Patient Dashboard Content -->
+    <div class="container-fluid mt-4">
+        <div class="row">
+            <!-- Patient Profile Sidebar -->
+            <div class="col-lg-3 col-md-4">
+                <div class="card patient-profile-card">
+                    <div class="card-body text-center">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Patient" class="rounded-circle mb-3" width="100">
+                        <h4 class="card-title">John Smith</h4>
+                        <p class="text-muted">Patient ID: PS-7842</p>
+                        
+                        <div class="patient-info text-start">
+                            <div class="info-item mb-2">
+                                <strong><i class="fas fa-birthday-cake me-2 text-primary"></i>Date of Birth:</strong>
+                                <span class="float-end">March 15, 1985</span>
+                            </div>
+                            <div class="info-item mb-2">
+                                <strong><i class="fas fa-venus-mars me-2 text-primary"></i>Gender:</strong>
+                                <span class="float-end">Male</span>
+                            </div>
+                            <div class="info-item mb-2">
+                                <strong><i class="fas fa-phone me-2 text-primary"></i>Phone:</strong>
+                                <span class="float-end">(555) 123-4567</span>
+                            </div>
+                            <div class="info-item mb-2">
+                                <strong><i class="fas fa-envelope me-2 text-primary"></i>Email:</strong>
+                                <span class="float-end">john.smith@email.com</span>
+                            </div>
+                            <div class="info-item mb-2">
+                                <strong><i class="fas fa-heartbeat me-2 text-primary"></i>Blood Type:</strong>
+                                <span class="float-end">O+</span>
+                            </div>
+                        </div>
+                        
+                        <button class="btn btn-outline-primary btn-sm w-100 mt-3">
+                            <i class="fas fa-edit me-1"></i> Edit Profile
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Emergency Contacts -->
+                <div class="card mt-4">
+                    <div class="card-header bg-light">
+                        <h6 class="mb-0"><i class="fas fa-address-book me-2"></i> Emergency Contacts</h6>
+                    </div>
+                    <div class="card-body">
+                        <div class="contact-item mb-3">
+                            <strong>Sarah Smith</strong>
+                            <p class="mb-1 small">Spouse</p>
+                            <p class="mb-0 small text-muted">(555) 987-6543</p>
+                        </div>
+                        <div class="contact-item">
+                            <strong>Dr. Michael Chen</strong>
+                            <p class="mb-1 small">Primary Physician</p>
+                            <p class="mb-0 small text-muted">(555) 456-7890</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main Content -->
+            <div class="col-lg-9 col-md-8">
+                <!-- Quick Stats -->
+                <div class="row mb-4">
+                    <div class="col-xl-3 col-md-6 mb-4">
+                        <div class="card stats-card border-left-primary">
+                            <div class="card-body">
+                                <div class="row align-items-center">
+                                    <div class="col mr-2">
+                                        <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                            Upcoming Appointments
+                                        </div>
+                                        <div class="h5 mb-0 font-weight-bold text-gray-800">2</div>
+                                    </div>
+                                    <div class="col-auto">
+                                        <i class="fas fa-calendar-alt fa-2x text-gray-300"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-md-6 mb-4">
+                        <div class="card stats-card border-left-success">
+                            <div class="card-body">
+                                <div class="row align-items-center">
+                                    <div class="col mr-2">
+                                        <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+                                            Active Prescriptions
+                                        </div>
+                                        <div class="h5 mb-0 font-weight-bold text-gray-800">3</div>
+                                    </div>
+                                    <div class="col-auto">
+                                        <i class="fas fa-prescription fa-2x text-gray-300"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-md-6 mb-4">
+                        <div class="card stats-card border-left-info">
+                            <div class="card-body">
+                                <div class="row align-items-center">
+                                    <div class="col mr-2">
+                                        <div class="text-xs font-weight-bold text-info text-uppercase mb-1">
+                                            Medical Records
+                                        </div>
+                                        <div class="h5 mb-0 font-weight-bold text-gray-800">24</div>
+                                    </div>
+                                    <div class="col-auto">
+                                        <i class="fas fa-file-medical fa-2x text-gray-300"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-md-6 mb-4">
+                        <div class="card stats-card border-left-warning">
+                            <div class="card-body">
+                                <div class="row align-items-center">
+                                    <div class="col mr-2">
+                                        <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
+                                            Pending Bills
+                                        </div>
+                                        <div class="h5 mb-0 font-weight-bold text-gray-800">1</div>
+                                    </div>
+                                    <div class="col-auto">
+                                        <i class="fas fa-file-invoice-dollar fa-2x text-gray-300"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Upcoming Appointments -->
+                <div class="row mb-4">
+                    <div class="col-12">
+                        <div class="card shadow">
+                            <div class="card-header py-3 d-flex justify-content-between align-items-center">
+                                <h6 class="m-0 font-weight-bold text-success">Upcoming Appointments</h6>
+                                <button class="btn btn-success btn-sm">
+                                    <i class="fas fa-plus me-1"></i> Book New
+                                </button>
+                            </div>
+                            <div class="card-body">
+                                <div class="appointment-list">
+                                    <div class="appointment-item card mb-3">
+                                        <div class="card-body">
+                                            <div class="row align-items-center">
+                                                <div class="col-md-2 text-center">
+                                                    <div class="date-badge">
+                                                        <div class="month text-primary">MAR</div>
+                                                        <div class="day h4 mb-0">20</div>
+                                                        <div class="time small">10:30 AM</div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <h6 class="card-title">Regular Checkup</h6>
+                                                    <p class="card-text mb-1">
+                                                        <i class="fas fa-user-md me-2 text-muted"></i>Dr. Sarah Johnson
+                                                    </p>
+                                                    <p class="card-text mb-0">
+                                                        <i class="fas fa-map-marker-alt me-2 text-muted"></i>Main Clinic - Room 204
+                                                    </p>
+                                                </div>
+                                                <div class="col-md-4 text-end">
+                                                    <span class="badge bg-success mb-2">Confirmed</span>
+                                                    <div class="btn-group">
+                                                        <button class="btn btn-outline-primary btn-sm">View</button>
+                                                        <button class="btn btn-outline-warning btn-sm">Reschedule</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="appointment-item card mb-3">
+                                        <div class="card-body">
+                                            <div class="row align-items-center">
+                                                <div class="col-md-2 text-center">
+                                                    <div class="date-badge">
+                                                        <div class="month text-primary">APR</div>
+                                                        <div class="day h4 mb-0">05</div>
+                                                        <div class="time small">2:00 PM</div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <h6 class="card-title">Dental Cleaning</h6>
+                                                    <p class="card-text mb-1">
+                                                        <i class="fas fa-user-md me-2 text-muted"></i>Dr. Michael Chen
+                                                    </p>
+                                                    <p class="card-text mb-0">
+                                                        <i class="fas fa-map-marker-alt me-2 text-muted"></i>Dental Wing - Room 101
+                                                    </p>
+                                                </div>
+                                                <div class="col-md-4 text-end">
+                                                    <span class="badge bg-info mb-2">Scheduled</span>
+                                                    <div class="btn-group">
+                                                        <button class="btn btn-outline-primary btn-sm">View</button>
+                                                        <button class="btn btn-outline-warning btn-sm">Reschedule</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recent Medical Activity -->
+                <div class="row">
+                    <div class="col-md-6 mb-4">
+                        <div class="card shadow">
+                            <div class="card-header py-3">
+                                <h6 class="m-0 font-weight-bold text-success">Active Prescriptions</h6>
+                            </div>
+                            <div class="card-body">
+                                <div class="prescription-list">
+                                    <div class="prescription-item mb-3 p-3 border rounded">
+                                        <div class="d-flex justify-content-between align-items-start">
+                                            <div>
+                                                <h6 class="mb-1">Lisinopril 10mg</h6>
+                                                <p class="mb-1 small text-muted">Take one tablet daily</p>
+                                                <p class="mb-0 small text-muted">Dr. Sarah Johnson • Started: Feb 15, 2024</p>
+                                            </div>
+                                            <span class="badge bg-success">Active</span>
+                                        </div>
+                                    </div>
+                                    <div class="prescription-item mb-3 p-3 border rounded">
+                                        <div class="d-flex justify-content-between align-items-start">
+                                            <div>
+                                                <h6 class="mb-1">Atorvastatin 20mg</h6>
+                                                <p class="mb-1 small text-muted">Take one tablet at bedtime</p>
+                                                <p class="mb-0 small text-muted">Dr. Sarah Johnson • Started: Feb 15, 2024</p>
+                                            </div>
+                                            <span class="badge bg-success">Active</span>
+                                        </div>
+                                    </div>
+                                    <div class="prescription-item p-3 border rounded">
+                                        <div class="d-flex justify-content-between align-items-start">
+                                            <div>
+                                                <h6 class="mb-1">Metformin 500mg</h6>
+                                                <p class="mb-1 small text-muted">Take one tablet twice daily</p>
+                                                <p class="mb-0 small text-muted">Dr. Michael Chen • Started: Jan 10, 2024</p>
+                                            </div>
+                                            <span class="badge bg-success">Active</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <a href="#" class="btn btn-outline-success btn-sm w-100 mt-3">View All Prescriptions</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6 mb-4">
+                        <div class="card shadow">
+                            <div class="card-header py-3">
+                                <h6 class="m-0 font-weight-bold text-success">Recent Lab Results</h6>
+                            </div>
+                            <div class="card-body">
+                                <div class="lab-results">
+                                    <div class="lab-item mb-3 p-3 border rounded">
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <div>
+                                                <h6 class="mb-1">Blood Test - Complete</h6>
+                                                <p class="mb-0 small text-muted">March 10, 2024</p>
+                                            </div>
+                                            <span class="badge bg-success">Normal</span>
+                                        </div>
+                                    </div>
+                                    <div class="lab-item mb-3 p-3 border rounded">
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <div>
+                                                <h6 class="mb-1">Cholesterol Panel</h6>
+                                                <p class="mb-0 small text-muted">February 15, 2024</p>
+                                            </div>
+                                            <span class="badge bg-warning">Borderline</span>
+                                        </div>
+                                    </div>
+                                    <div class="lab-item p-3 border rounded">
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <div>
+                                                <h6 class="mb-1">Urinalysis</h6>
+                                                <p class="mb-0 small text-muted">January 20, 2024</p>
+                                            </div>
+                                            <span class="badge bg-success">Normal</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <a href="#" class="btn btn-outline-success btn-sm w-100 mt-3">View All Results</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="patient-dashboard.js"></script>
+</body>
+</html>

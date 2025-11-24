@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CuraSync - Clinic & Patient Management</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <i class="fas fa-heartbeat text-primary me-2"></i>
+                <span class="fw-bold">CuraSync</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#features">Features</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#how-it-works">How It Works</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#testimonials">Testimonials</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#pricing">Pricing</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn btn-primary ms-2" href="#" data-bs-toggle="modal" data-bs-target="#roleSelectionModal">Login</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="row align-items-center min-vh-100">
+                <div class="col-lg-6">
+                    <h1 class="display-4 fw-bold mb-4">Streamline Your Healthcare Practice</h1>
+                    <p class="lead mb-4">CuraSync simplifies clinic management with intuitive tools for appointments, billing, prescriptions, and patient records - all in one secure platform.</p>
+                    <div class="d-flex flex-wrap gap-3">
+                        <button class="btn btn-primary btn-lg">Get Started Free</button>
+                        <button class="btn btn-outline-primary btn-lg">Schedule a Demo</button>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="hero-image">
+                        <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Healthcare Professional" class="img-fluid rounded shadow">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-5 bg-light">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-12 text-center">
+                    <h2 class="fw-bold">Powerful Features for Modern Healthcare</h2>
+                    <p class="lead">Everything you need to manage your clinic efficiently</p>
+                </div>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-card card h-100 border-0 shadow-sm">
+                        <div class="card-body text-center p-4">
+                            <div class="feature-icon mb-3">
+                                <i class="fas fa-calendar-check fa-2x text-primary"></i>
+                            </div>
+                            <h5 class="card-title">Appointment Scheduling</h5>
+                            <p class="card-text">Intelligent scheduling with automated reminders to reduce no-shows and optimize your calendar.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-card card h-100 border-0 shadow-sm">
+                        <div class="card-body text-center p-4">
+                            <div class="feature-icon mb-3">
+                                <i class="fas fa-file-invoice-dollar fa-2x text-primary"></i>
+                            </div>
+                            <h5 class="card-title">Simplified Billing</h5>
+                            <p class="card-text">Streamlined invoicing and payment processing to manage your clinic's finances efficiently.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-card card h-100 border-0 shadow-sm">
+                        <div class="card-body text-center p-4">
+                            <div class="feature-icon mb-3">
+                                <i class="fas fa-prescription fa-2x text-primary"></i>
+                            </div>
+                            <h5 class="card-title">Digital Prescriptions</h5>
+                            <p class="card-text">Create, manage, and send prescriptions digitally with built-in drug interaction checks.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-card card h-100 border-0 shadow-sm">
+                        <div class="card-body text-center p-4">
+                            <div class="feature-icon mb-3">
+                                <i class="fas fa-notes-medical fa-2x text-primary"></i>
+                            </div>
+                            <h5 class="card-title">Patient Records</h5>
+                            <p class="card-text">Secure, centralized patient health records accessible anytime, anywhere.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-card card h-100 border-0 shadow-sm">
+                        <div class="card-body text-center p-4">
+                            <div class="feature-icon mb-3">
+                                <i class="fas fa-chart-line fa-2x text-primary"></i>
+                            </div>
+                            <h5 class="card-title">Analytics & Reporting</h5>
+                            <p class="card-text">Gain insights into your practice with comprehensive analytics and visual reports.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-card card h-100 border-0 shadow-sm">
+                        <div class="card-body text-center p-4">
+                            <div class="feature-icon mb-3">
+                                <i class="fas fa-shield-alt fa-2x text-primary"></i>
+                            </div>
+                            <h5 class="card-title">Secure & Compliant</h5>
+                            <p class="card-text">HIPAA-compliant platform with enterprise-grade security to protect patient data.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="py-5">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-12 text-center">
+                    <h2 class="fw-bold">How CuraSync Works</h2>
+                    <p class="lead">Simple setup, immediate benefits</p>
+                </div>
+            </div>
+            <div class="row align-items-center mb-5">
+                <div class="col-lg-6">
+                    <h3 class="fw-bold mb-3">For Healthcare Providers</h3>
+                    <ul class="list-unstyled">
+                        <li class="mb-3">
+                            <div class="d-flex">
+                                <div class="me-3">
+                                    <span class="badge bg-primary rounded-circle p-2">1</span>
+                                </div>
+                                <div>
+                                    <h5>Set Up Your Clinic Profile</h5>
+                                    <p>Add your practice details, staff members, and services offered.</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="mb-3">
+                            <div class="d-flex">
+                                <div class="me-3">
+                                    <span class="badge bg-primary rounded-circle p-2">2</span>
+                                </div>
+                                <div>
+                                    <h5>Import Patient Records</h5>
+                                    <p>Easily migrate existing patient data or start fresh with new entries.</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="mb-3">
+                            <div class="d-flex">
+                                <div class="me-3">
+                                    <span class="badge bg-primary rounded-circle p-2">3</span>
+                                </div>
+                                <div>
+                                    <h5>Start Managing Appointments</h5>
+                                    <p>Use our intuitive calendar to schedule, reschedule, and track appointments.</p>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-6">
+                    <div class="how-it-works-image">
+                        <img src="https://images.unsplash.com/photo-1586773860418-d37222d8fce3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Doctor using tablet" class="img-fluid rounded shadow">
+                    </div>
+                </div>
+            </div>
+            <div class="row align-items-center flex-lg-row-reverse">
+                <div class="col-lg-6">
+                    <h3 class="fw-bold mb-3">For Patients</h3>
+                    <ul class="list-unstyled">
+                        <li class="mb-3">
+                            <div class="d-flex">
+                                <div class="me-3">
+                                    <span class="badge bg-primary rounded-circle p-2">1</span>
+                                </div>
+                                <div>
+                                    <h5>Create Your Account</h5>
+                                    <p>Sign up and complete your health profile in minutes.</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="mb-3">
+                            <div class="d-flex">
+                                <div class="me-3">
+                                    <span class="badge bg-primary rounded-circle p-2">2</span>
+                                </div>
+                                <div>
+                                    <h5>Book Appointments Online</h5>
+                                    <p>View available slots and book appointments at your convenience.</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="mb-3">
+                            <div class="d-flex">
+                                <div class="me-3">
+                                    <span class="badge bg-primary rounded-circle p-2">3</span>
+                                </div>
+                                <div>
+                                    <h5>Access Your Health Records</h5>
+                                    <p>View prescriptions, test results, and medical history anytime.</p>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-6">
+                    <div class="how-it-works-image">
+                        <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Patient using phone" class="img-fluid rounded shadow">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-5 bg-light">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-12 text-center">
+                    <h2 class="fw-bold">What Our Users Say</h2>
+                    <p class="lead">Trusted by healthcare professionals nationwide</p>
+                </div>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="testimonial-card card h-100 border-0 shadow-sm">
+                        <div class="card-body p-4">
+                            <div class="d-flex align-items-center mb-3">
+                                <div class="avatar me-3">
+                                    <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Dr. Sarah Johnson" class="rounded-circle" width="50">
+                                </div>
+                                <div>
+                                    <h5 class="mb-0">Dr. Sarah Johnson</h5>
+                                    <p class="text-muted mb-0">Family Physician</p>
+                                </div>
+                            </div>
+                            <p class="card-text">"CuraSync has transformed how we manage our practice. Appointment scheduling is now effortless, and our patients love the digital prescription feature."</p>
+                            <div class="rating text-warning">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="testimonial-card card h-100 border-0 shadow-sm">
+                        <div class="card-body p-4">
+                            <div class="d-flex align-items-center mb-3">
+                                <div class="avatar me-3">
+                                    <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Dr. Michael Chen" class="rounded-circle" width="50">
+                                </div>
+                                <div>
+                                    <h5 class="mb-0">Dr. Michael Chen</h5>
+                                    <p class="text-muted mb-0">Cardiologist</p>
+                                </div>
+                            </div>
+                            <p class="card-text">"The analytics dashboard provides valuable insights into our practice performance. We've reduced no-shows by 30% since implementing CuraSync."</p>
+                            <div class="rating text-warning">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="testimonial-card card h-100 border-0 shadow-sm">
+                        <div class="card-body p-4">
+                            <div class="d-flex align-items-center mb-3">
+                                <div class="avatar me-3">
+                                    <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Jennifer Martinez" class="rounded-circle" width="50">
+                                </div>
+                                <div>
+                                    <h5 class="mb-0">Jennifer Martinez</h5>
+                                    <p class="text-muted mb-0">Clinic Administrator</p>
+                                </div>
+                            </div>
+                            <p class="card-text">"The billing module has saved us countless hours. Invoicing is now automated, and tracking payments is so much easier. Our entire team loves using CuraSync."</p>
+                            <div class="rating text-warning">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-5">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-12 text-center">
+                    <h2 class="fw-bold">Simple, Transparent Pricing</h2>
+                    <p class="lead">Choose the plan that fits your practice</p>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="card pricing-card h-100 border-0 shadow-sm">
+                        <div class="card-header text-center py-4 bg-light">
+                            <h4 class="fw-bold">Basic</h4>
+                            <div class="price display-4 fw-bold text-primary">$49</div>
+                            <p class="text-muted">per month</p>
+                        </div>
+                        <div class="card-body p-4">
+                            <ul class="list-unstyled mb-4">
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i> Up to 500 patients</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i> Appointment scheduling</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i> Basic patient records</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i> Email support</li>
+                                <li class="mb-2 text-muted"><i class="fas fa-times me-2"></i> Advanced analytics</li>
+                                <li class="mb-2 text-muted"><i class="fas fa-times me-2"></i> Digital prescriptions</li>
+                                <li class="mb-2 text-muted"><i class="fas fa-times me-2"></i> Billing module</li>
+                            </ul>
+                            <button class="btn btn-outline-primary w-100">Get Started</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="card pricing-card h-100 border-0 shadow-lg popular">
+                        <div class="card-header text-center py-4 bg-primary text-white position-relative">
+                            <span class="badge bg-warning text-dark position-absolute top-0 start-50 translate-middle px-3 py-2">Most Popular</span>
+                            <h4 class="fw-bold">Professional</h4>
+                            <div class="price display-4 fw-bold text-white">$99</div>
+                            <p>per month</p>
+                        </div>
+                        <div class="card-body p-4">
+                            <ul class="list-unstyled mb-4">
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i> Up to 2000 patients</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i> Appointment scheduling</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i> Complete patient records</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i> Priority support</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i> Advanced analytics</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i> Digital prescriptions</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i> Billing module</li>
+                            </ul>
+                            <button class="btn btn-primary w-100">Get Started</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="card pricing-card h-100 border-0 shadow-sm">
+                        <div class="card-header text-center py-4 bg-light">
+                            <h4 class="fw-bold">Enterprise</h4>
+                            <div class="price display-4 fw-bold text-primary">Custom</div>
+                            <p class="text-muted">tailored to your needs</p>
+                        </div>
+                        <div class="card-body p-4">
+                            <ul class="list-unstyled mb-4">
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i> Unlimited patients</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i> Multi-location support</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i> Complete patient records</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i> 24/7 dedicated support</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i> Advanced analytics</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i> Digital prescriptions</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i> Custom integrations</li>
+                            </ul>
+                            <button class="btn btn-outline-primary w-100">Contact Sales</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-5 bg-primary text-white">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8">
+                    <h2 class="fw-bold mb-3">Ready to Transform Your Practice?</h2>
+                    <p class="lead mb-0">Join hundreds of healthcare providers using CuraSync to deliver better patient care.</p>
+                </div>
+                <div class="col-lg-4 text-lg-end mt-3 mt-lg-0">
+                    <button class="btn btn-light btn-lg me-2">Start Free Trial</button>
+                    <button class="btn btn-outline-light btn-lg">Schedule Demo</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4 mb-lg-0">
+                    <h5 class="fw-bold mb-3">
+                        <i class="fas fa-heartbeat text-primary me-2"></i>
+                        CuraSync
+                    </h5>
+                    <p>Streamlining healthcare administration for clinics and patients with secure, intuitive technology.</p>
+                    <div class="social-links">
+                        <a href="#" class="text-white me-3"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-white me-3"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-white me-3"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="text-white"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 mb-4 mb-lg-0">
+                    <h5 class="fw-bold mb-3">Product</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#" class="text-white-50 text-decoration-none">Features</a></li>
+                        <li class="mb-2"><a href="#" class="text-white-50 text-decoration-none">Pricing</a></li>
+                        <li class="mb-2"><a href="#" class="text-white-50 text-decoration-none">Security</a></li>
+                        <li class="mb-2"><a href="#" class="text-white-50 text-decoration-none">Updates</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-4 mb-4 mb-lg-0">
+                    <h5 class="fw-bold mb-3">Company</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#" class="text-white-50 text-decoration-none">About Us</a></li>
+                        <li class="mb-2"><a href="#" class="text-white-50 text-decoration-none">Careers</a></li>
+                        <li class="mb-2"><a href="#" class="text-white-50 text-decoration-none">Blog</a></li>
+                        <li class="mb-2"><a href="#" class="text-white-50 text-decoration-none">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-4 mb-4 mb-lg-0">
+                    <h5 class="fw-bold mb-3">Support</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#" class="text-white-50 text-decoration-none">Help Center</a></li>
+                        <li class="mb-2"><a href="#" class="text-white-50 text-decoration-none">Documentation</a></li>
+                        <li class="mb-2"><a href="#" class="text-white-50 text-decoration-none">API Reference</a></li>
+                        <li class="mb-2"><a href="#" class="text-white-50 text-decoration-none">Status</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2">
+                    <h5 class="fw-bold mb-3">Legal</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#" class="text-white-50 text-decoration-none">Privacy Policy</a></li>
+                        <li class="mb-2"><a href="#" class="text-white-50 text-decoration-none">Terms of Service</a></li>
+                        <li class="mb-2"><a href="#" class="text-white-50 text-decoration-none">Cookie Policy</a></li>
+                        <li class="mb-2"><a href="#" class="text-white-50 text-decoration-none">Compliance</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="my-4 bg-secondary">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <p class="mb-0 text-white-50">© 2023 CuraSync. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <p class="mb-0 text-white-50">HIPAA Compliant • SOC 2 Certified</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Role Selection Modal -->
+    <div class="modal fade" id="roleSelectionModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Choose Your Login Type</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <div class="role-card card h-100 text-center border-0 shadow-sm">
+                                <div class="card-body p-4">
+                                    <div class="role-icon mb-3">
+                                        <i class="fas fa-hospital fa-3x text-primary"></i>
+                                    </div>
+                                    <h5 class="card-title">Clinic Login</h5>
+                                    <p class="card-text">For healthcare providers and clinic staff</p>
+                                    <button class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#clinicLoginModal">
+                                        Clinic Login
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="role-card card h-100 text-center border-0 shadow-sm">
+                                <div class="card-body p-4">
+                                    <div class="role-icon mb-3">
+                                        <i class="fas fa-user fa-3x text-success"></i>
+                                    </div>
+                                    <h5 class="card-title">Patient Login</h5>
+                                    <p class="card-text">For patients to access their health records</p>
+                                    <button class="btn btn-success w-100" data-bs-toggle="modal" data-bs-target="#patientLoginModal">
+                                        Patient Login
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Clinic Login Modal -->
+    <div class="modal fade" id="clinicLoginModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">
+                        <i class="fas fa-hospital text-primary me-2"></i>
+                        Clinic Login
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="clinicLoginForm">
+                        <div class="mb-3">
+                            <label for="clinicEmail" class="form-label">Clinic Email</label>
+                            <input type="email" class="form-control" id="clinicEmail" placeholder="clinic@example.com" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="clinicPassword" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="clinicPassword" placeholder="Enter your password" required>
+                        </div>
+                        <div class="mb-3 form-check">
+                            <input type="checkbox" class="form-check-input" id="clinicRemember">
+                            <label class="form-check-label" for="clinicRemember">Remember me</label>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Login to Clinic Dashboard</button>
+                    </form>
+                    <div class="text-center mt-3">
+                        <a href="#" class="text-decoration-none">Forgot your password?</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Patient Login Modal -->
+    <div class="modal fade" id="patientLoginModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">
+                        <i class="fas fa-user text-success me-2"></i>
+                        Patient Login
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="patientLoginForm">
+                        <div class="mb-3">
+                            <label for="patientEmail" class="form-label">Patient Email</label>
+                            <input type="email" class="form-control" id="patientEmail" placeholder="patient@example.com" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="patientPassword" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="patientPassword" placeholder="Enter your password" required>
+                        </div>
+                        <div class="mb-3 form-check">
+                            <input type="checkbox" class="form-check-input" id="patientRemember">
+                            <label class="form-check-label" for="patientRemember">Remember me</label>
+                        </div>
+                        <button type="submit" class="btn btn-success w-100">Login to Patient Portal</button>
+                    </form>
+                    <div class="text-center mt-3">
+                        <a href="#" class="text-decoration-none">Forgot your password?</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

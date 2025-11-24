@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clinic Dashboard - CuraSync</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="dashboard-body">
+    <!-- Clinic Dashboard Navigation -->
+    <!-- Update the navbar in clinic-dashboard.html -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="clinic-dashboard.html">
+                <i class="fas fa-heartbeat me-2"></i>
+                <span class="fw-bold">CuraSync Clinic</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#clinicNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="clinicNavbar">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="clinic-dashboard.html"><i class="fas fa-tachometer-alt me-1"></i> Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="clinic-appointments.html"><i class="fas fa-calendar-alt me-1"></i> Appointments</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="clinic-patients.html"><i class="fas fa-users me-1"></i> Patients</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="clinic-prescriptions.html"><i class="fas fa-prescription me-1"></i> Prescriptions</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="clinic-billing.html"><i class="fas fa-file-invoice-dollar me-1"></i> Billing</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="clinic-reports.html"><i class="fas fa-chart-bar me-1"></i> Reports</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="clinicDropdown" role="button" data-bs-toggle="dropdown">
+                            <i class="fas fa-user-md me-1"></i> Dr. Sarah Johnson
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="clinic-settings.html"><i class="fas fa-cog me-2"></i> Settings</a></li>
+                            <li><a class="dropdown-item" href="clinic-profile.html"><i class="fas fa-hospital me-2"></i> Clinic Profile</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#" id="clinicLogout"><i class="fas fa-sign-out-alt me-2"></i> Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Clinic Dashboard Content -->
+    <div class="container-fluid mt-4">
+        <div class="row">
+            <!-- Sidebar -->
+            <div class="col-lg-2 col-md-3 d-none d-md-block">
+                <div class="card sidebar-card">
+                    <div class="card-body">
+                        <h6 class="card-title text-muted mb-3">QUICK ACTIONS</h6>
+                        <ul class="nav nav-pills flex-column">
+                            <li class="nav-item mb-2">
+                                <a class="nav-link active" href="#">
+                                    <i class="fas fa-tachometer-alt me-2"></i> Dashboard
+                                </a>
+                            </li>
+                            <li class="nav-item mb-2">
+                                <a class="nav-link" href="#">
+                                    <i class="fas fa-plus-circle me-2"></i> New Appointment
+                                </a>
+                            </li>
+                            <li class="nav-item mb-2">
+                                <a class="nav-link" href="#">
+                                    <i class="fas fa-user-plus me-2"></i> Add Patient
+                                </a>
+                            </li>
+                            <li class="nav-item mb-2">
+                                <a class="nav-link" href="#">
+                                    <i class="fas fa-file-prescription me-2"></i> Write Prescription
+                                </a>
+                            </li>
+                            <li class="nav-item mb-2">
+                                <a class="nav-link" href="#">
+                                    <i class="fas fa-file-invoice me-2"></i> Create Invoice
+                                </a>
+                            </li>
+                        </ul>
+                        
+                        <h6 class="card-title text-muted mt-4 mb-3">TODAY'S SCHEDULE</h6>
+                        <div class="schedule-list">
+                            <div class="schedule-item mb-3">
+                                <small class="text-primary fw-bold">9:00 AM</small>
+                                <p class="mb-0 small">John Smith - Checkup</p>
+                            </div>
+                            <div class="schedule-item mb-3">
+                                <small class="text-primary fw-bold">10:30 AM</small>
+                                <p class="mb-0 small">Maria Garcia - Consultation</p>
+                            </div>
+                            <div class="schedule-item mb-3">
+                                <small class="text-primary fw-bold">2:00 PM</small>
+                                <p class="mb-0 small">Robert Johnson - Follow-up</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main Content -->
+            <div class="col-lg-10 col-md-9">
+                <!-- Stats Cards -->
+                <div class="row mb-4">
+                    <div class="col-xl-3 col-md-6 mb-4">
+                        <div class="card stats-card border-left-primary">
+                            <div class="card-body">
+                                <div class="row align-items-center">
+                                    <div class="col mr-2">
+                                        <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                            Today's Appointments
+                                        </div>
+                                        <div class="h5 mb-0 font-weight-bold text-gray-800">12</div>
+                                    </div>
+                                    <div class="col-auto">
+                                        <i class="fas fa-calendar-check fa-2x text-gray-300"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-md-6 mb-4">
+                        <div class="card stats-card border-left-success">
+                            <div class="card-body">
+                                <div class="row align-items-center">
+                                    <div class="col mr-2">
+                                        <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+                                            Total Patients
+                                        </div>
+                                        <div class="h5 mb-0 font-weight-bold text-gray-800">1,248</div>
+                                    </div>
+                                    <div class="col-auto">
+                                        <i class="fas fa-users fa-2x text-gray-300"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-md-6 mb-4">
+                        <div class="card stats-card border-left-info">
+                            <div class="card-body">
+                                <div class="row align-items-center">
+                                    <div class="col mr-2">
+                                        <div class="text-xs font-weight-bold text-info text-uppercase mb-1">
+                                            Pending Prescriptions
+                                        </div>
+                                        <div class="h5 mb-0 font-weight-bold text-gray-800">8</div>
+                                    </div>
+                                    <div class="col-auto">
+                                        <i class="fas fa-prescription-bottle fa-2x text-gray-300"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-md-6 mb-4">
+                        <div class="card stats-card border-left-warning">
+                            <div class="card-body">
+                                <div class="row align-items-center">
+                                    <div class="col mr-2">
+                                        <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
+                                            Revenue This Month
+                                        </div>
+                                        <div class="h5 mb-0 font-weight-bold text-gray-800">$24,580</div>
+                                    </div>
+                                    <div class="col-auto">
+                                        <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Charts and Recent Activity -->
+                <div class="row">
+                    <!-- Appointments Chart -->
+                    <div class="col-xl-8 col-lg-7">
+                        <div class="card shadow mb-4">
+                            <div class="card-header py-3 d-flex justify-content-between align-items-center">
+                                <h6 class="m-0 font-weight-bold text-primary">Appointments Overview</h6>
+                                <div class="dropdown no-arrow">
+                                    <a class="dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                                        <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
+                                    </a>
+                                    <ul class="dropdown-menu dropdown-menu-end">
+                                        <li><a class="dropdown-item" href="#">This Week</a></li>
+                                        <li><a class="dropdown-item" href="#">This Month</a></li>
+                                        <li><a class="dropdown-item" href="#">This Year</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="chart-area">
+                                    <canvas id="appointmentsChart" height="250"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Recent Patients -->
+                    <div class="col-xl-4 col-lg-5">
+                        <div class="card shadow mb-4">
+                            <div class="card-header py-3">
+                                <h6 class="m-0 font-weight-bold text-primary">Recent Patients</h6>
+                            </div>
+                            <div class="card-body">
+                                <div class="recent-patients">
+                                    <div class="patient-item d-flex align-items-center mb-3">
+                                        <img class="rounded-circle me-3" src="https://randomuser.me/api/portraits/men/32.jpg" alt="Patient" width="40">
+                                        <div class="flex-grow-1">
+                                            <div class="fw-bold">John Smith</div>
+                                            <small class="text-muted">Checkup - Today 9:00 AM</small>
+                                        </div>
+                                        <span class="badge bg-success">Completed</span>
+                                    </div>
+                                    <div class="patient-item d-flex align-items-center mb-3">
+                                        <img class="rounded-circle me-3" src="https://randomuser.me/api/portraits/women/44.jpg" alt="Patient" width="40">
+                                        <div class="flex-grow-1">
+                                            <div class="fw-bold">Maria Garcia</div>
+                                            <small class="text-muted">Consultation - Today 10:30 AM</small>
+                                        </div>
+                                        <span class="badge bg-warning">Pending</span>
+                                    </div>
+                                    <div class="patient-item d-flex align-items-center mb-3">
+                                        <img class="rounded-circle me-3" src="https://randomuser.me/api/portraits/men/22.jpg" alt="Patient" width="40">
+                                        <div class="flex-grow-1">
+                                            <div class="fw-bold">Robert Johnson</div>
+                                            <small class="text-muted">Follow-up - Today 2:00 PM</small>
+                                        </div>
+                                        <span class="badge bg-info">Scheduled</span>
+                                    </div>
+                                    <div class="patient-item d-flex align-items-center mb-3">
+                                        <img class="rounded-circle me-3" src="https://randomuser.me/api/portraits/women/68.jpg" alt="Patient" width="40">
+                                        <div class="flex-grow-1">
+                                            <div class="fw-bold">Sarah Wilson</div>
+                                            <small class="text-muted">Dental Cleaning - Tomorrow 11:00 AM</small>
+                                        </div>
+                                        <span class="badge bg-info">Scheduled</span>
+                                    </div>
+                                </div>
+                                <a href="#" class="btn btn-primary btn-sm w-100 mt-2">View All Patients</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Upcoming Appointments -->
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card shadow mb-4">
+                            <div class="card-header py-3">
+                                <h6 class="m-0 font-weight-bold text-primary">Upcoming Appointments</h6>
+                            </div>
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table table-hover">
+                                        <thead>
+                                            <tr>
+                                                <th>Patient</th>
+                                                <th>Time</th>
+                                                <th>Type</th>
+                                                <th>Doctor</th>
+                                                <th>Status</th>
+                                                <th>Actions</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <div class="d-flex align-items-center">
+                                                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Patient" class="rounded-circle me-2" width="32">
+                                                        <div>John Smith</div>
+                                                    </div>
+                                                </td>
+                                                <td>Today, 9:00 AM</td>
+                                                <td>Regular Checkup</td>
+                                                <td>Dr. Sarah Johnson</td>
+                                                <td><span class="badge bg-success">Confirmed</span></td>
+                                                <td>
+                                                    <button class="btn btn-sm btn-outline-primary">View</button>
+                                                    <button class="btn btn-sm btn-outline-warning">Reschedule</button>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div class="d-flex align-items-center">
+                                                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Patient" class="rounded-circle me-2" width="32">
+                                                        <div>Maria Garcia</div>
+                                                    </div>
+                                                </td>
+                                                <td>Today, 10:30 AM</td>
+                                                <td>Consultation</td>
+                                                <td>Dr. Michael Chen</td>
+                                                <td><span class="badge bg-warning">Pending</span></td>
+                                                <td>
+                                                    <button class="btn btn-sm btn-outline-primary">View</button>
+                                                    <button class="btn btn-sm btn-outline-success">Confirm</button>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div class="d-flex align-items-center">
+                                                        <img src="https://randomuser.me/api/portraits/men/22.jpg" alt="Patient" class="rounded-circle me-2" width="32">
+                                                        <div>Robert Johnson</div>
+                                                    </div>
+                                                </td>
+                                                <td>Today, 2:00 PM</td>
+                                                <td>Follow-up</td>
+                                                <td>Dr. Sarah Johnson</td>
+                                                <td><span class="badge bg-info">Scheduled</span></td>
+                                                <td>
+                                                    <button class="btn btn-sm btn-outline-primary">View</button>
+                                                    <button class="btn btn-sm btn-outline-warning">Reschedule</button>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="clinic-dashboard.js"></script>
+</body>
+</html>
